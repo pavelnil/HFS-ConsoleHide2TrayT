@@ -45,6 +45,29 @@
 1. Copy the plugin folder to `\plugins` in your **HFS** directory.
 2. **Activate** the plugin via the HFS web interface.
 
+<details>
+  <summary><i>An alternative method for a plugin to change the title:</i></summary>
+
+```
+    const uniqueTitle = `HFS_CONSOLE_${process.pid}`;
+    log(`Setting console title: ${uniqueTitle}`);
+    
+    try {
+        if (process.stdout.isTTY) {
+            process.stdout.write(`\x1b]0;${uniqueTitle}\x07`);
+            log("Used escape sequence to set title");
+        } 
+        else {
+            child_process.execSync(`title ${uniqueTitle}`, {stdio: 'ignore'});
+            log("Used title command to set title");
+        }
+    } catch (e) {
+        log(`Error setting console title: ${e.message}`);
+    }
+```
+
+</details>
+
 ---
 
 ## Requirements
