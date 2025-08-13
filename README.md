@@ -4,11 +4,11 @@
 
 ## Project Description
 
-**[HFS-ConsoleHide2TrayT](../../releases/)** is a tool for managing the console of **HTTP File Server version 3 (HFS 3)**, enabling its **minimization to the system tray**. It consists of two components:  
-  - **HFS Plugin** (an agent that modifies the console title).  
-  - **Native Application** (C++ tray manager).  
+**[HFS-ConsoleHide2TrayT](../../releases/)** is a tool for managing the console of **HTTP File Server version 3 (HFS 3)**, enabling its **minimization to the system tray**. It consists of two components:
+  - **HFS Plugin** (an agent that modifies the console title).
+  - **Native Application** (C++ tray manager).
 
-**No installation required** — operates in portable mode.  
+**No installation required** — operates in portable mode.
 
 ![screenshot](../../blob/main/screenshots/screenshot1.jpg)
 
@@ -20,23 +20,23 @@
 * **Automatically hides the console** when the server starts.
 * **Quick visibility toggle** via the tray icon:
   * Double left-click.
-  * Context menu: "Hide/Show HFS Console".
+  * Context menu: "**Hide/Show HFS Console**".
 * **Automatic console detection** via a unique window title (format: `HFS_CONSOLE_<PID>`).
-* **Windows 11 ConPTY support (CASCADIA_HOSTING_WINDOW_CLASS)**. Handles HWND changes when dragging console tabs. 
+* **Windows 11 ConPTY support (CASCADIA_HOSTING_WINDOW_CLASS)**. Handles HWND changes when dragging console tabs.
 
 ---
 
 ## Technical Specifications
 
-* **Architecture**:  
-  - **Agent**: HFS plugin in **JavaScript** (Node.js).  
+* **Architecture**:
+  - **Agent**: HFS plugin in **JavaScript** (Node.js).
   - **Tray Manager**: Native **C++** application.
-* **System Integration**:  
-  - **WinAPI** for window management (`FindWindowEx`, `ShowWindow`).  
-  - **Shell API** for tray operations (`Shell_NotifyIcon`).  
+* **System Integration**:
+  - **WinAPI** for window management (`FindWindowEx`, `ShowWindow`).
+  - **Shell API** for tray operations (`Shell_NotifyIcon`).
   - Windows message processing (`WndProc`).
-* **Security**:  
-  - Works exclusively with **local HFS processes**.  
+* **Security**:
+  - Works exclusively with **local HFS processes**.
   - No network calls.
 
 ---
@@ -49,11 +49,11 @@
 
 ## Requirements
 
-* **Server**:  
-  - **HTTP File Server v3**  
+* **Server**:
+  - **HTTP File Server v3**
   - Installed **[ConsoleHide2TrayT-agent](../../releases/)** plugin.
-* **Client**:  
-  - **Windows 7** or newer.  
+* **Client**:
+  - **Windows 7** or newer.
 
 ---
 Support:
